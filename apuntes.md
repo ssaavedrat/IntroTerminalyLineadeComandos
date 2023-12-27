@@ -2,6 +2,212 @@
 
 ## Primeros pasos
 
+### ¿Qué es la terminal?
+
+La terminal es una interfaz de texto que nos permite interactuar con el sistema operativo. En este caso, nos referimos a la terminal de Linux.
+
+### Aprendiendo a caminar en la terminal
+
+#### Sistema de carpetas 
+
+El sistema de carpetas de Linux es similar al de Windows. La carpeta raíz es `/`. Las carpetas de usuario se encuentran en `/home`. La carpeta de usuario actual se representa con `~`. La carpeta de usuario actual se puede obtener con el comando `pwd` (print working directory).
+
+```bash
+pwd
+```
+
+#### Navegando entre carpetas
+
+Para navegar entre carpetas usamos el comando `cd` (change directory). Por ejemplo, para ir a la carpeta de usuario actual usamos la virgulilla `~`.
+
+```bash
+cd ~
+```
+
+El punto y doble punto se utilizan para referirse a la carpeta actual y a la carpeta padre, respectivamente.
+
+```bash
+cd ..
+```
+
+Para ir a la carpeta raíz usamos la barra `/`.
+
+```bash
+cd /
+```
+
+#### Listando archivos y carpetas
+
+Para listar archivos y carpetas usamos el comando `ls` (list). Por ejemplo, para listar los archivos y carpetas de la carpeta actual usamos
+
+```bash
+ls
+```
+
+Para obtener más información sobre los archivos y carpetas usamos la opción `-l` (long).
+
+```bash
+ls -l
+```
+
+Si queremos listar de forma más amigable, usamos la opción `-h` (human readable).
+
+```bash
+ls -lh
+```
+
+#### Comando file
+
+El comando `file` nos permite obtener información sobre un archivo. Por ejemplo, para obtener información sobre el archivo `file.txt` usamos
+
+```bash
+file file.txt
+```
+
+### Manipulando archivos y carpetas
+
+#### Comando mkdir
+
+El comando `mkdir` (make directory) nos permite crear carpetas. Por ejemplo, para crear una carpeta llamada `test` usamos
+
+```bash
+mkdir test
+```
+
+Podemos crear múltiples carpetas a la vez. Por ejemplo, para crear las carpetas `test1`, `test2` y `test3` usamos
+
+```bash
+mkdir test1 test2 test3
+```
+
+#### Comando touch
+
+El comando `touch` nos permite crear archivos. Por ejemplo, para crear un archivo llamado `file.txt` usamos
+
+```bash
+touch file.txt
+```
+
+Podemos crear múltiples archivos a la vez. Por ejemplo, para crear los archivos `file1.txt`, `file2.txt` y `file3.txt` usamos
+
+```bash
+touch file1.txt file2.txt file3.txt
+```
+
+#### Comando cp
+
+El comando `cp` (copy) nos permite copiar archivos y carpetas. Por ejemplo, para copiar el archivo `file.txt` a la carpeta `test` usamos
+
+```bash
+cp file.txt test
+```
+
+cp permite cambiar el nombre de un archivo o carpeta. Por ejemplo, para copiar el archivo `file.txt` a la carpeta `test` con el nombre `file2.txt` usamos
+
+```bash
+cp file.txt test/file2.txt
+```
+
+#### Comando mv
+
+El comando `mv` (move) nos permite mover carpetas. Por ejemplo, para mover el directorio `test` a la carpeta `test2` usamos
+
+```bash
+mv test test2
+```
+
+#### Comando rm
+
+El comando `rm` (remove) nos permite eliminar archivos y carpetas. Por ejemplo, para eliminar el archivo `file.txt` usamos
+
+```bash
+rm file.txt
+```
+
+Ahora si queremos eliminar la carpeta `test2` usamos la opción `-r` (recursive) para eliminar de forma recursiva (archivos y carpeta).
+
+```bash
+rm -r test2
+```
+
+El archivo rm tiene las opciones, `-f` (force) para forzar la eliminación y `-i` (interactive) para preguntar antes de eliminar.
+
+### Explorando el contenido de nuestros archivos
+
+#### Comandos head y tail
+
+El comando `head` nos permite ver las primeras líneas de un archivo. Por ejemplo, para ver las primeras 5 líneas del archivo `file.txt` usamos
+
+```bash
+head -n 5 file.txt
+```
+
+El comando `tail` nos permite ver las últimas líneas de un archivo. Por ejemplo, para ver las últimas 5 líneas del archivo `file.txt` usamos
+
+```bash
+tail -n 5 file.txt
+```
+
+La cantidad por defecto de líneas es 10. Por lo tanto, podemos omitir el parámetro `-n` en ambos comandos.
+
+#### Comando Less
+
+El comando `less` nos permite ver el contenido de un archivo de forma interactiva. Por ejemplo, para ver el contenido del archivo `file.txt` usamos
+
+```bash
+less file.txt
+```
+
+Para navegar por el archivo usamos las flechas del teclado. Para salir presionamos la tecla `q`. Para buscar una palabra usamos `/` seguido de la palabra a buscar. Para buscar la siguiente ocurrencia usamos `n`.
+
+### ¿Qué es un comando?
+
+Un comando es un mensaje enviado al ordenador que provoca una respuesta en este sistema y se comporta como una orden, pues informa al dispositivo informático que debe ejecutar una acción según la indicación enviada.
+
+Un comando puede ser:
+* Un programa ejecutable
+* Un comando de utilidad de la shell. Ejemplo: `cd`
+* Una función de la shell. Ejemplo: `mkdir`
+* Un alias. Ejemplo: `ls`
+
+#### Comando type
+
+El comando `type` nos permite saber qué tipo de comando estamos ejecutando. Por ejemplo, para saber qué tipo de comando es `ls` usamos
+
+```bash
+type ls
+```
+
+#### Comando alias
+
+El comando `alias` nos permite crear alias para comandos. Por ejemplo, para crear un alias para el comando `ls -lh` usamos
+
+```bash
+alias l="ls -lh"
+```
+
+Ahora podemos usar el comando `l` para ejecutar `ls -lh`
+
+```bash
+l
+```
+
+#### Comando help
+
+El comando `help` nos permite obtener ayuda sobre un comando.
+
+#### Comando man
+
+El comando `man` permite acceder al manual de un comando (mayor información).
+
+#### Comando info
+
+El comando `info` permite acceder a la información de un comando (menor información).
+
+#### Comando whatis
+
+El comando `whatis` nos permite obtener una descripción de un comando.
+
 ## Empezando a correr
 
 ### Redirecciones: cómo funciona la shell
@@ -388,7 +594,7 @@ netstat -i
 
 ### Comprimiendo Archivos Tar y Zip
 
-### Usando el comando tar
+#### Usando el comando tar
 
 El comando `tar` nos permite comprimir y descomprimir archivos. Para comprimir archivos usamos la opción `-c` agregamos `-f` para indicar el nombre del archivo de salida y agregamos `-v` (verbose) para ver el progreso de la compresión.
 
@@ -408,7 +614,7 @@ Para descomprimir usamos la opción `-x`
 tar -xvf [nombreDelArchivo.tar] [archivos]
 ```
 
-### Usando el comando zip
+#### Usando el comando zip
 
 El comando `zip` nos permite comprimir y descomprimir archivos. Para comprimir archivos usamos la opción `-r` para comprimir recursivamente (carpeta y archivos).
 
@@ -421,3 +627,132 @@ Para descomprimir simplemente usamos el comando `unzip`
 ```bash
 unzip [nombreDelArchivo.zip]
 ```
+
+### Manejo de Procesos
+
+#### Comando ps
+
+El comando `ps` nos permite ver los procesos que se están ejecutando en nuestra computadora.
+
+```bash
+ps
+```
+
+#### Comando Kill
+
+El comando `kill` nos permite terminar procesos. Para ello, debemos conocer el id del proceso que queremos terminar. Para obtener el id de un proceso usamos el comando `ps`, obtenemos su id y luego lo pasamos como argumento al comando `kill`.
+
+```bash
+kill [idDelProceso]
+```
+
+#### Comando top
+
+El comando `top` nos permite ver los procesos que se están ejecutando en nuestra computadora. Además, nos permite ver el uso de recursos de cada proceso.
+
+```bash
+top
+```
+
+Podemos ver opciones de top presionando la tecla `h`.
+
+#### Comando htop
+
+El comando `htop` es similar al comando `top`, pero con una interfaz más amigable.
+
+```bash
+htop
+```
+
+### Procesos en foreground y background
+
+Cuando ejecutamos un comando en la terminal, este se ejecuta en foreground. Esto significa que la terminal queda bloqueada hasta que el comando termine de ejecutarse.
+
+Cuando un proceso está en ejecución sin que sea mostrado en la terminal se dice que se está ejecutando en el background. 
+
+A modo de ejemplo, usaremos el comando `cat > file.txt` para escribir en un archivo. Este comando nos permite escribir en un archivo desde la terminal. Ahora utilizaremos `CTRL + Z` para detener el proceso. 
+
+Luego, usaremos el comando `jobs` para ver los procesos que se están ejecutando en background. 
+
+```bash	
+jobs
+```
+
+Para traer el proceso suspendido al foreground usamos el comando `fg` seguido del número de proceso que queremos traer al foreground.
+
+```bash
+fg [numeroDeProceso]
+```
+
+#### Otras formas de enviar al background
+
+Podemos enviar un proceso al background agregando el símbolo `&` al final del comando.
+
+```bash
+cat > file.txt &
+```
+
+Podemos enviar un proceso al background después de haberlo ejecutado. Por ejemplo, podemos ejecutar la interfaz gráfica de chrome con
+
+```bash
+google-chrome-stable
+```
+
+Luego usamos el comando `CTRL + Z` para detener el proceso y luego usamos el comando `bg` seguido del número de proceso que queremos enviar al background.
+
+```bash
+bg [numeroDeProceso]
+```
+
+Esto nos permite seguir usando la terminal mientras el proceso se ejecuta en background con normalidad.
+
+### Editores de Texto en la Terminal
+
+Existen 3 editores de texto en la terminal que son muy populares. Estos son `nano`, `vim` y `emacs`.
+
+#### Editor vim
+
+Para abrir un archivo escribimos 
+
+```bash
+vim [nombreDelArchivo]
+```
+
+Para empezar a escribir presionamos la tecla `i`. Para salir del modo de escritura (inserción) presionamos la tecla `ESC`. Para guardar los cambios presionamos `:w` y para salir presionamos `:q`. Para guardar y salir presionamos `:wq`.
+
+En el modo normal podemos usar `dd` para borrar una línea, `yy` para copiar una línea, `p` para pegar una línea, `u` para deshacer, `CTRL + R` para rehacer. 
+
+En el modo normal `/` nos permite buscar una palabra al igual que en `less`.
+
+### Personalizar la terminal
+
+1. Instalar Tilix
+
+    ```bash
+    sudo apt install tilix
+    ```
+
+2. Instalar ZSH
+
+    ```bash
+    sudo apt install zsh
+    ```
+
+3. Instalar Oh My ZSH
+
+4. Personalizar funcionalidades y colores
+
+5. Usar power level
+   1. Instalar powerlevel10k
+   2. Instalar fonts
+   3. Configurar powerlevel10k
+      1. Para recongifurar `p10k configure`
+
+## Recursos
+
+* Linux basics for Hackers
+* The Linux Command Line
+* Grep (O'Reilly)
+* Regular Expressions (O'Reilly)
+* Linux Pocket Guide (O'Reilly)
+* Vi and Vim Editors Pocket Reference (O'Reilly)
