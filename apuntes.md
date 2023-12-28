@@ -8,7 +8,7 @@ La terminal es una interfaz de texto que nos permite interactuar con el sistema 
 
 ### Aprendiendo a caminar en la terminal
 
-#### Sistema de carpetas 
+#### Sistema de carpetas
 
 El sistema de carpetas de Linux es similar al de Windows. La carpeta raíz es `/`. Las carpetas de usuario se encuentran en `/home`. La carpeta de usuario actual se representa con `~`. La carpeta de usuario actual se puede obtener con el comando `pwd` (print working directory).
 
@@ -242,7 +242,7 @@ ls photo_?.jpg
 
 Si queremos buscar archivos que empiezan con la letra `C` o la letra `D` usamos el wildcard `[]` para seleccionar un rango de caracteres.
 
-```bash	
+```bash
 ls [CD]*
 ```
 
