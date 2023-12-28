@@ -208,6 +208,50 @@ El comando `info` permite acceder a la información de un comando (menor informa
 
 El comando `whatis` nos permite obtener una descripción de un comando.
 
+### Wildcards
+
+Los wildcards son caracteres especiales que nos permiten seleccionar archivos y carpetas de forma más eficiente.
+
+Se pueden usar con los comandos de manipulación de archivos `ls`, `cp`, `mv` y `rm`.
+
+#### Tipos de wildcards
+
+* `*` (asterisco): representa cualquier cantidad de caracteres.
+* `?` (signo de interrogación): representa un solo caracter.
+* `[]` (corchetes): representa un rango o conjunto de caracteres.
+
+#### Ejemplos de uso
+
+Para listar todos los archivos de texto de la carpeta actual usamos
+
+```bash
+ls *.txt
+```
+
+Para listar todos los archivos de texto que empiezan con la letra `f` usamos
+
+```bash
+ls f*.txt
+```
+
+Si queremos buscar archivos que empiecen con `photo_` pero queremos seleccionar todas las fotos con nombre `photo_1`, `photo_2`, `photo_3`, etc. Podemos usar el wildcard `?` para seleccionar un solo caracter.
+
+```bash
+ls photo_?.jpg
+```
+
+Si queremos buscar archivos que empiezan con la letra `C` o la letra `D` usamos el wildcard `[]` para seleccionar un rango de caracteres.
+
+```bash	
+ls [CD]*
+```
+
+Si quieremos buscar archivos en un rango de números usamos el wildcard `[]`. Por ejemplo, para fotografías del año 2019 a 2021 usamos
+
+```bash
+ls photo_[2019-2021]*.jpg
+```
+
 ## Empezando a correr
 
 ### Redirecciones: cómo funciona la shell
